@@ -38,7 +38,7 @@ fun LoginScreenRoot(
     val state by viewModel.state.collectAsStateWithLifecycle()
     LoginScreen(
         state = state,
-        onAction = {}
+        onAction = viewModel::onAction
     )
 }
 
@@ -50,8 +50,8 @@ fun LoginScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(Paddings.xLarge),
-        verticalArrangement = Arrangement.Center,
+            .padding(Paddings.extra),
+        verticalArrangement = Arrangement.Bottom,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
