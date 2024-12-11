@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.PreviewLightDark
@@ -69,6 +70,7 @@ fun LoginScreen(
         Spacer(modifier = Modifier.height(Spacers.large))
         NaiveNetworkTextField(
             state = state.email,
+            keyboardType = KeyboardType.Email,
             hint = stringResource(id = R.string.email)
         )
         Spacer(modifier = Modifier.height(Spacers.xSmall))
