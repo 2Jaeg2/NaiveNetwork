@@ -6,6 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.jackl.jackprojects.naivenetwork.auth.presentation.intro.IntroScreen
+import com.jackl.jackprojects.naivenetwork.auth.presentation.login.LoginScreenRoot
 import com.jackl.jackprojects.naivenetwork.splash.SplashScreen
 
 @Composable
@@ -37,11 +39,18 @@ fun NavGraphBuilder.authGraph(
         startDestination = IntroScreen
     ){
         composable<IntroScreen> {
-
+            IntroScreen(
+                onSignIn = {
+                    navController.navigate(LoginScreen)
+                },
+                onSignUp = {
+                    navController.navigate(RegisterScreen)
+                }
+            )
         }
 
         composable<LoginScreen> {
-
+            LoginScreenRoot()
         }
     }
 }
