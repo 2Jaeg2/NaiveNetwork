@@ -1,7 +1,7 @@
 [versions]
 agp = "8.4.2"
-kotlin = "1.9.0"
-coreKtx = "1.15.0"
+kotlin = "2.0.0"
+coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -29,7 +29,8 @@ turbine = "1.1.0"
 coroutines-test = "1.8.1"
 koin-test = "4.0.0"
 koin-test-junit4 = "4.0.0"
-
+compose-ui-test-manifest = "1.7.5"
+androidx-navigation-testing = "2.8.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -43,8 +44,8 @@ androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-ui-test-junit4-android = { group = "androidx.compose.ui", name = "ui-test-junit4-android" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
 # Splash Screen
@@ -89,16 +90,23 @@ org-mongodb-bson = { module = "org.mongodb:bson", version.ref = "bson" }
 # Local Unit Tests
 
 # Test dependencies
+
+# Test dependencies
+
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
+
 junit5-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit5" }
 junit5-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit5" }
 junit5-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit5" }
 junit5-android-test-compose = { module = "de.mannodermaus.junit5:android-test-compose", version.ref = "junit5-compose" }
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
 assertk = { module = "com.willowtreeapps.assertk:assertk", version.ref = "assertk" }
 ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines-test" }
-
+compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version.ref = "compose-ui-test-manifest"}
+androidx-navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "androidx-navigation-testing" }
 koin-test = { group = "io.insert-koin", name = "koin-test", version.ref = "koin-test"}
 koin-test-junit4 = { group = "io.insert-koin", name = "koin-test-junit4", version.ref = "koin-test-junit4"}
 
@@ -108,6 +116,7 @@ jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = 
 
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 junit5 = { id = "de.mannodermaus.android-junit5", version.ref = "junit5-plugin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 [bundles]
 koin = [

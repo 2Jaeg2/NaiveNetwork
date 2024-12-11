@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+/app/src/main/res/drawable/naive_network_splash_image.png
+/app/src/main/res/drawable/naive_network_app_icon.png

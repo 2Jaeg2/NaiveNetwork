@@ -1,19 +1,20 @@
-package com.jackl.jackprojects.naivenetwork
+package com.jackl.jackprojects.naivenetwork.core.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.jackl.jackprojects.naivenetwork.ui.theme.NaiveNetworkTheme
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.navigation.compose.rememberNavController
+import com.jackl.jackprojects.naivenetwork.core.presentation.ui.theme.NaiveNetworkTheme
+import com.jackl.jackprojects.naivenetwork.core.presentation.ui.util.NavigationRoot
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,29 +26,13 @@ class MainActivity : ComponentActivity() {
                     Surface(
                         modifier = Modifier
                             .padding(innerPadding)
-                            .
+                            .background(MaterialTheme.colorScheme.background)
                     ) {
-
+                        val navController = rememberNavController()
+                        NavigationRoot(navController)
                     }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier,
-        style = MaterialTheme.typography.headlineLarge
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    NaiveNetworkTheme {
-        Greeting("Android")
     }
 }

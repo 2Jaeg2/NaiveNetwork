@@ -3,16 +3,21 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.junit5)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
     namespace = "com.jackl.jackprojects.naivenetwork"
-    compileSdk = 35
+    compileSdk = 34
+
+    testOptions {
+        animationsDisabled = true
+    }
 
     defaultConfig {
         applicationId = "com.jackl.jackprojects.naivenetwork"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -61,13 +66,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+//    debugImplementation(libs.compose.ui.test.manifest)
 
     // Splash Screen
     implementation(libs.androidx.core.splashscreen)
@@ -100,22 +100,33 @@ dependencies {
     // MongoDB
     implementation(libs.org.mongodb.bson)
 
-    // Test Dependencies
+    // Jvm Test Dependencies
+    testImplementation(libs.junit)
+    testImplementation(libs.junit.platform.launcher)
     testImplementation(libs.junit5.api)
-    testImplementation(libs.junit5.engine)
+    testRuntimeOnly(libs.junit5.engine)
     testImplementation(libs.junit5.params)
     testImplementation(libs.mockk)
     testImplementation(libs.assertk)
     testImplementation(libs.turbine)
     testImplementation(libs.coroutines.test)
     testImplementation(libs.ktor.client.mock)
+    testImplementation(libs.koin.test)
+    testImplementation(libs.koin.test.junit4)
 
-    androidTestImplementation(libs.junit5.android.test.compose)
-    androidTestImplementation(libs.koin.test)
-    androidTestImplementation(libs.koin.test.junit4)
-    androidTestImplementation(libs.mockk)
+    // Instrumented Test Dependencies
+    androidTestImplementation(platform("androidx.compose:compose-bom:2024.11.00"))
+    androidTestImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(libs.androidx.ui.test.junit4.android)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.mockk.android)
+    androidTestImplementation(libs.assertk)
     androidTestImplementation(libs.turbine)
     androidTestImplementation(libs.coroutines.test)
-    androidTestImplementation(libs.assertk)
+    debugImplementation(libs.compose.ui.test.manifest)
+    androidTestImplementation(libs.androidx.navigation.testing)
+    androidTestImplementation(libs.koin.test)
+    androidTestImplementation(libs.koin.test.junit4)
 
 }

@@ -1,4 +1,4 @@
-package com.jackl.jackprojects.naivenetwork.ui.theme
+package com.jackl.jackprojects.naivenetwork.core.presentation.ui.theme
 import androidx.compose.ui.graphics.Color
 
 val primaryLight = Color(0xFF3C59B1)

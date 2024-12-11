@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">NaiveNetwork</string>
+    <string name="splash_screen_logo">Splash Screen Logo</string>
+    <string name="login">Login</string>
+    <string name="hello_buddy">만나서 반가워요!</string>
+    <string name="welcome_back">Welcome back to our network!!</string>
+    <string name="password_visible">Password Visible</string>
+    <string name="password_invisible">Password Invisible</string>
+    <string name="email">이메일</string>
+    <string name="password">비밀번호</string>
+    <string name="sign_in">로그인</string>
+    <string name="dont_have_an_account_yet">아직 계정이 없으신가요?</string>
+    <string name="sign_up">회원가입</string>
 </resources>

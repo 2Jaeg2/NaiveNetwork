@@ -1,4 +1,4 @@
-package com.jackl.jackprojects.naivenetwork.ui.theme
+package com.jackl.jackprojects.naivenetwork.core.presentation.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes
