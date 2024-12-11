@@ -24,12 +24,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.jackl.jackprojects.naivenetwork.R
+import com.jackl.jackprojects.naivenetwork.core.domain.util.DispatcherProvider
+import com.jackl.jackprojects.naivenetwork.core.domain.util.StandardDispatchers
 import com.jackl.jackprojects.naivenetwork.core.presentation.ui.theme.NaiveNetworkTheme
 import com.jackl.jackprojects.naivenetwork.core.presentation.ui.theme.Paddings
 import com.jackl.jackprojects.naivenetwork.core.presentation.ui.theme.Spacers
 import com.jackl.jackprojects.naivenetwork.core.util.Constants.LOGO_IMAGE_SIZE_IN_DP
 import com.jackl.jackprojects.naivenetwork.core.util.Constants.SPLASH_SCREEN_DURATION_MILLISECONDS
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.withContext
 
 /**
  * A composable function that displays a splash screen with an animated logo and app name.
@@ -39,7 +42,8 @@ import kotlinx.coroutines.delay
  */
 @Composable
 fun SplashScreen(
-    goNextScreen: () -> Unit
+    goNextScreen: () -> Unit,
+    dispatchers: DispatcherProvider = StandardDispatchers()
 ) {
     /**
      * Scale for the logo animation.
@@ -58,17 +62,19 @@ fun SplashScreen(
 
     // Animate the logo scale and trigger navigation to the next screen after the duration.
     LaunchedEffect(true) {
-//        scale.animateTo(
-//            targetValue = 1f,
-//            animationSpec = tween(
-//                durationMillis = 1000,
-//                easing = {
-//                    overshootInterpolator.getInterpolation(it)
-//                }
-//            )
-//        )
-        delay(SPLASH_SCREEN_DURATION_MILLISECONDS)
-        goNextScreen()
+        withContext(dispatchers.main) {
+            scale.animateTo(
+                targetValue = 1f,
+                animationSpec = tween(
+                    durationMillis = 1000,
+                    easing = {
+                        overshootInterpolator.getInterpolation(it)
+                    }
+                )
+            )
+            delay(SPLASH_SCREEN_DURATION_MILLISECONDS)
+            goNextScreen()
+        }
     }
 
     // Layout for the splash screen.

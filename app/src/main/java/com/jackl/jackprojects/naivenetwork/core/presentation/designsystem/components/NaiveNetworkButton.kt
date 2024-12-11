@@ -48,19 +48,17 @@ fun NaiveNetworkButton(
                 .padding(vertical = Paddings.medium),
             contentAlignment = Alignment.Center
         ) {
-            CircularProgressIndicator(
-                modifier = Modifier
-                    .size(CIRCULAR_PROGRESS_BAR_SIZE)
-                    .semantics {
-                        contentDescription = "ProgressBar"
-                        if (!isLoading) {
-                            invisibleToUser()
-                        }
-                    }
-                    .alpha(if (isLoading) 1f else 0f),
-                strokeWidth = CIRCULAR_PROGRESS_STROKE_WIDTH,
-                color = MaterialTheme.colorScheme.onPrimary,
-            )
+            if (isLoading) {
+                CircularProgressIndicator(
+                    modifier = Modifier
+                        .size(CIRCULAR_PROGRESS_BAR_SIZE)
+                        .semantics {
+                            contentDescription = "ProgressBar"
+                        },
+                    strokeWidth = CIRCULAR_PROGRESS_STROKE_WIDTH,
+                    color = MaterialTheme.colorScheme.onPrimary,
+                )
+            }
 
             Text(
                 text = title,

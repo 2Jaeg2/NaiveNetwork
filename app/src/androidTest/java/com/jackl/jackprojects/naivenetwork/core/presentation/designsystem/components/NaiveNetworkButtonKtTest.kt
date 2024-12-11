@@ -2,6 +2,7 @@ package com.jackl.jackprojects.naivenetwork.core.presentation.designsystem.compo
 
 import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.assertIsEnabled
 import androidx.compose.ui.test.assertIsNotDisplayed
 import androidx.compose.ui.test.hasAnySibling
 import androidx.compose.ui.test.hasText
@@ -20,7 +21,7 @@ class NaiveNetworkButtonKtTest {
         composeRule.setContent {
             NaiveNetworkButton(
                 title = "test title",
-                isLoading = false,
+                isLoading = true,
                 onClick = {  }
             )
         }
@@ -28,5 +29,20 @@ class NaiveNetworkButtonKtTest {
         composeRule
             .onNodeWithContentDescription("ProgressBar")
             .assertIsDisplayed()
+    }
+
+    @Test
+    fun verifyCircularProgressBarVisibility_whenButtonIsNotLoading() {
+        composeRule.setContent {
+            NaiveNetworkButton(
+                title = "test title",
+                isLoading = false,
+                onClick = {  }
+            )
+        }
+
+        composeRule
+            .onNodeWithContentDescription("ProgressBar")
+            .assertIsNotDisplayed()
     }
 }
