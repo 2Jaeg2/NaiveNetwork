@@ -4,6 +4,7 @@ import androidx.compose.ui.unit.dp
 
 object Spacers {
     val none = 12.dp
+    val tiny = 4.dp
     val xSmall = 16.dp
     val small = 20.dp
     val medium = 24.dp
