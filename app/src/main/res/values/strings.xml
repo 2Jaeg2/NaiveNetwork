@@ -14,4 +14,6 @@
     <string name="intro_hello">다양한 사람들과 다양한 시각을 교류해요.</string>
     <string name="intro_description">저희와 함께 다양한 사람들과 관심사를 교류하고 의견을 나누어 보아요.</string>
     <string name="intro_logo">인트로 로고</string>
+    <string name="already_have_an_account">이미 계정이 있으신가요?</string>
+    <string name="welcome">Welcome to our network!</string>
 </resources>
