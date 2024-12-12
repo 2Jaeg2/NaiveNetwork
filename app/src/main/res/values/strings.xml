@@ -16,4 +16,10 @@
     <string name="intro_logo">인트로 로고</string>
     <string name="already_have_an_account">이미 계정이 있으신가요?</string>
     <string name="welcome">Welcome to our network!</string>
+    <string name="post_image">Post Image</string>
+    <string name="favorite">좋아요</string>
+    <string name="share">공유하기</string>
+    <string name="comments">댓글</string>
+    <string name="username">\@%s</string>
+    <string name="comments_count">%d</string>
 </resources>
