@@ -26,4 +26,19 @@ object Constants {
      * Stroke Width of the Circular Progress Bar.
      * */
     val CIRCULAR_PROGRESS_STROKE_WIDTH = 1.5.dp
+
+    /**
+     * Size of the NaiveButton's back circle size.
+     * */
+    val NAIVE_BUTTON_BACK_CIRCLE_SIZE = 64.dp
+
+    /**
+     * Size of the NaiveButton's Icon size.
+     * */
+    val NAIVE_BUTTON_ICON_SIZE = 32.dp
+
+    /**
+     * Max line of post description.
+     * */
+    val POST_DESCRIPTION_MAX_LINE = 1
 }
